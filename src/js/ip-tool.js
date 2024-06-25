@@ -107,8 +107,12 @@ const ipHandler = (sender) => {
         updateIPRow(ip);
         updateClassInfo(ip);
     } else {
-        clearRow(document.getElementById("tr-ip-dec"));
-        clearRow(document.getElementById("tr-ip-bin"));
+        for (const row of ["tr-ip-dec", "tr-ip-bin"]) {
+            clearRow(document.getElementById(row));
+        }
+        for (const cell of ["class-info-first-octet", "class-info-ip-class"]) {
+            document.getElementById(cell).innerText = "";
+        }
     }
 }
 
