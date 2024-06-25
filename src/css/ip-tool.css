@@ -1,0 +1,175 @@
+:root {
+    --color-bg: #303030;
+    --font-family: Consolas, "Times New Roman", times, roman, serif;
+    --header-height: 10vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    color: white;
+    background: var(--color-bg);
+    text-overflow: ellipsis;
+    scroll-behavior: smooth;
+}
+
+/* Main */
+
+main {
+    box-sizing: border-box;
+    max-width: 98vw;
+    margin: 0 0;
+
+    text-align: center;
+    background: var(--color-bg);
+}
+
+/* User Input */
+
+#input-containers {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    text-align: center;
+}
+
+#input-containers .input-container {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 2em 1em;
+}
+
+#input-containers .input-container label {
+    margin: 0 1em;
+}
+
+#input-containers .input-container input {
+    margin: auto;
+}
+
+#ip-input-container input {
+    width: 8em;
+    text-align: center;
+}
+
+#mask-input-container input {
+    width: 3em;
+    text-align: center;
+}
+
+
+/* Table */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    margin: 0 auto;
+}
+
+table tr {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+table#t-binaries thead tr {
+    justify-content: flex-end;
+}
+
+th,
+td {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 6em;
+    height: 3.5em;
+    padding: 0.1em;
+    border: 1px solid darkgrey;
+    margin: 1px;
+
+    font-size: 12px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+th,
+table#t-binaries td:first-child {
+    background-color: black;
+    color: white;
+}
+
+td {
+    background-color: white;
+    color: black
+}
+
+
+/* Class Info */
+
+#class-info-first-octet b {
+    color: red;
+}
+
+#classful-disclaimer {
+    box-sizing: border-box;
+
+    padding: 0.5em 1em;
+    border: 1px solid black;
+    font-size: 14px;
+    text-align: justify;
+    color: black;
+    background-color: yellow;
+}
+
+
+/* Special */
+
+.nobr {
+    white-space: pre;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media screen and (min-width: 512px) {
+
+    #input-containers {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    #input-containers .input-container {
+        flex-flow: row nowrap;
+    }
+
+}
+
+@media screen and (min-width: 730px) {
+
+    th,
+    td {
+        width: 10em;
+        height: 2.5em;
+        padding: 0.5em;
+
+        font-size: 14px;
+    }
+
+}

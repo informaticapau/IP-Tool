@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta info -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comunidad de informática orientada a estudiantes y principiantes.">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Informaticapau">
+    <meta property="og:description" content="Comunidad de informática orientada a estudiantes y principiantes.">
+    <meta property="og:image" content="https://www.informaticapau.com/img/ipau/logo_cuadrado.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon & title -->
+    <link rel="icon" type="image/x-icon" href="https://www.informaticapau.com/favicon.ico">
+    <title>IP Tool | By @informaticapau</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/ip-tool.css">
+
+    <!-- Scripts -->
+    <script src="./js/ip-tool.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="https://www.informaticapau.com/">
+            <img id="logo" src="https://www.informaticapau.com/favicon.ico" alt="Logo">
+        </a>
+        <a href="https://www.informaticapau.com/">
+            <img id="webname" src="https://www.informaticapau.com/img/ipau/tag.png" alt="@informaticapau">
+        </a>
+    </header>
+
+
+    <!-- Main -->
+    <main>
+
+        <h1>IP Tool</h1>
+
+        <div id="input-containers">
+
+            <span class="input-container" id="ip-input-container">
+                <label for="ip">IP Address</label>
+                <input id="ip" type="text" name="ip" size="15" value="" oninput="ipHandler(this);">
+            </span>
+
+
+            <span class="input-container" id="mask-input-container">
+                <label for="mask">Mask</label>
+                <input id="mask" type="number" name="mask" size="2" value="" min="0" max="32"
+                    oninput="maskHandler(this);">
+            </span>
+
+            <span class="input-container">
+                <label for="classful">Classful (Obsolete)</label>
+                <input id="classful" type="checkbox" name="classful" onchange="classfulHandler(this);">
+            </span>
+
+        </div>
+
+        <span id="output"></span>
+
+        <div class="table-container">
+            <table id="t-binaries">
+                <thead>
+                    <tr>
+                        <!-- <th></th> -->
+                        <th>First Octet</th>
+                        <th>Second Octet</th>
+                        <th>Third Octet</th>
+                        <th>Fourth Octet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tr-ip-dec">
+                        <td>IP <span class="nobr"> (base 10) </span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="tr-mask-dec">
+                        <td>Mask  <span class="nobr"> (base 10) </span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="tr-ip-bin">
+                        <td>IP <span class="nobr"> (base 2) </span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="tr-mask-bin">
+                        <td>Mask  <span class="nobr"> (base 2) </span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="class-info" hidden>
+            <h2>Class Info</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Octet</th>
+                        <th>IP Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="class-info-first-octet"></td>
+                        <td id="class-info-ip-class"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p id="classful-disclaimer">⚠️ The Classful IP model is an early method for allocating IP addresses. It
+                divided the IP address space into
+                classes (A to E), each with a fixed network size. However, this model is now obsolete and has been
+                replaced
+                by the more efficient Classless Inter-Domain Routing (CIDR) model.</p>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <span>© 2024 Todos los derechos reservados.</span>
+        <span>Página desarrollada por <a href="https://github.com/danielfeitopin">Daniel Feito</a>.</span>
+        <span>Contacto: <a href="mailto:informaticapau@pm.me">informaticapau@pm.me</a> .</span>
+     </footer>
+
+</body>
+
+</html>
